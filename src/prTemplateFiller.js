@@ -7,8 +7,8 @@ function() {
   const teamName = 'Domains';
   const teamCode = 'DOMS';
   // get branch name and pr description
-  const branchName = document.querySelector('details#head-ref-selector span').value;
-  let prDescription = document.querySelector('textarea#pull_request_body').innerHTML;
+  const branchName = document.querySelector('details#head-ref-selector span[data-menu-button]').innerHTML;
+  let prDescription = document.querySelector('textarea#pull_request_body').value;
   // check branch name for jira ticket number
   const [ticketId] = branchName.match(/[a-zA-Z]{3,6}\-\d{1,6}/) || [];
   let prTitle = branchName;
@@ -41,7 +41,7 @@ function() {
 javascript:(function(){
   const teamName = 'Domains';
   const teamCode = 'DOMS';
-  const branchName = document.querySelector('details#head-ref-selector span').innerHTML;
+  const branchName = document.querySelector('details#head-ref-selector span[data-menu-button]').innerHTML;
   let prDescription = document.querySelector('textarea#pull_request_body').value;
 
   const [ticketId] = branchName.match(/[a-zA-Z]{3,6}\-\d{1,6}/) || [];
